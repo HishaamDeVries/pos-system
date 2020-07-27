@@ -4,6 +4,7 @@ import Inventory from "./Inventory";
 import Pos from "./Pos";
 import Transactions from "./Transactions";
 import LiveCart from "./LiveCart";
+
 const Main = () => (
   <main>
     <Switch>
@@ -14,4 +15,5 @@ const Main = () => (
     </Switch>
   </main>
 );
+
 export default Main;

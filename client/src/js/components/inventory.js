@@ -1,56 +1,181 @@
-import React, { Component } from "react";
-import "../../App.css";
+import React, { useState, useEffect } from "react";
+import "./App.css";
 import Header from "./Header";
 import Product from "./Product";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 const HOST = "http://localhost:80";
 
-class Inventory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { products: [] };
-  }
-  componentWillMount() {
-    var url = HOST + `/api/inventory/products`;
+const Inventory = () => {
+  const [products, setProducts] = useState([]);
+  const [productFormModal, setProductFromModal] = useState(false);
+  const [name, setName] = useState("");
+  const [snackMessage, setSnackMessage] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
+
+  useEffect(() => {
+    let url = HOST + `/api/inventory/products`;
     axios.get(url).then((response) => {
-      this.setState({ products: response.data });
+      setProducts(response.data);
     });
-  }
-  render() {
-    var { products } = this.state;
-    var renderProducts = () => {
-      if (products.length === 0) {
-        return <p>{products}</p>;
-      }
-      return products.map((product) => <Product {...product} />);
+  });
+
+  const handleNewProduct = (e) => {
+    e.preventDefault();
+    setProductFromModal(false);
+    let newProduct = {
+      name: name,
+      quantity: quantity,
+      price: price,
     };
-    return (
-      <div>
-        <Header />
-        <div class="container">
-          <a
-            href="#/inventory/create-product"
-            class="btn btn-success pull-right"
-          >
-            <i class="glyphicon glyphicon-plus" /> Add New Item
-          </a>
-          <br />
-          <br />
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity on Hand</th>
-                <th />
-              </tr>
-            </thead>
-            <tbody>{renderProducts()}</tbody>
-          </table>
-        </div>
+
+    axios
+      .post(HOST + `/api/inventory/product`, newProduct)
+      .then(
+        (response) => setSnackMessage("Product Added Successfully!"),
+        handleSnackbar()
+      )
+      .catch((err) => {
+        console.log(err);
+        setSnackMessage("Product Was Not Added!");
+        handleSnackbar();
+      });
+  };
+
+  const handleEditProduct = (editProduct) => {
+    axios
+      .put(HOST + `/api/inventory/product`, editProduct)
+      .then((response) => {
+        setSnackMessage("Product Updated Successfully!");
+        handleSnackbar();
+        return true;
+      })
+      .catch((err) => {
+        console.log(err);
+        setSnackMessage("Product Update Failed!");
+        handleSnackbar();
+        return false;
+      });
+  };
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handlePrice = (e) => {
+    setPrice(e.target.value);
+  };
+
+  const handleQuantity = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const handleSnackbar = () => {
+    let bar = document.getElementById("snackbar");
+    bar.className = "show";
+    setTimeout(function () {
+      bar.className = bar.className.replace("show", "");
+    }, 3000);
+  };
+
+  const renderProducts = () => {
+    if (products.length === 0) {
+      return <p>{products}</p>;
+    } else {
+      return products.map((product) => (
+        <Product {...product} onEditProduct={handleEditProduct} />
+      ));
+    }
+  };
+
+  return (
+    <div>
+      <Header />
+
+      <div class="container">
+        <button
+          class="btn btn-success pull-right text-dark"
+          onClick={() => setProductFromModal(true)}
+        >
+          <i class="glyphicon glyphicon-plus" /> Add New Item
+        </button>
+        <br />
+        <br />
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity on Hand</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>{renderProducts()}</tbody>
+        </table>
       </div>
-    );
-  }
-}
+
+      <Modal show={productFormModal}>
+        <Modal.Header>
+          <Modal.Title>Add Product</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form class="form-horizontal" name="newProductForm">
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="name">
+                Name
+              </label>
+              <div class="col-md-4">
+                <input
+                  name="name"
+                  placeholder="Name"
+                  class="form-control"
+                  onChange={handleName}
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="price">
+                Price
+              </label>
+              <div class="col-md-4">
+                <input
+                  name="price"
+                  placeholder="Price"
+                  class="form-control"
+                  onChange={handlePrice}
+                  type="number"
+                  step="any"
+                  min="0"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="quantity_on_hand">
+                Quantity On Hand
+              </label>
+              <div class="col-md-4">
+                <input
+                  name="quantity_on_hand"
+                  placeholder="Quantity"
+                  onChange={handleQuantity}
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <br /> <br /> <br />
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setProductFromModal(false)}>Close</Button>
+          <Button onClick={handleNewProduct}>Submit</Button>
+        </Modal.Footer>
+      </Modal>
+      <div id="snackbar">{snackMessage}</div>
+    </div>
+  );
+};
+
 export default Inventory;
