@@ -1,5 +1,9 @@
 # Point of Sale Application Using React, JavaScript and CSS
 
+# What is the purpose of this app
+
+- This web app is a point of sale system ment for self-own or small businesses which helps keep track of transactions made, inventory and sales made
+
 # To start both front and back-end at the same time.
 
 - npm run dev
