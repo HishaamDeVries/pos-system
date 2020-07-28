@@ -298,7 +298,6 @@ class CheckOut extends Component {
                           </label>
                           <div className="col-md-8 input-group">
                             <select
-                              title
                               value={this.state.name}
                               className="form-control"
                               name="name"
