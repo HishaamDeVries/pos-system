@@ -1,5 +1,9 @@
 # Point of Sale Application Using React, JavaScript and CSS
 
+# To start both front and back-end at the same time.
+
+- npm run dev
+
 # All dependencies for front-end
 
 - Used Bootstrap 3.4.1 and React-Bootstrap 0.31.5 instead fo Bootstrap 4 and React-Bootstrap 1.0.0.1 cause it interfered with the page styling and because bootstrap 4 does not have glyphicons while bootstrap 3 does
@@ -22,6 +26,12 @@
 
 - Concurrently: to start up both back end and front-end at the same time
 
+# Problems that I could not fix or figure out
+
+- When you choosing a item in additem modal for cart you have to chose the second item first, add it, delete it and then you can only add the first item cause if you chose the first item the name won't show when its in cart and transactions
+- Could not figure out how to add the price of item automatically to price input when item is choosen in Name selecter input so you have to type out price instead
+- LiveCart will only show the current transaction being made only after its made
+
 # Links for all dependencies
 
 - Nedb: [NeDB](https://stackabuse.com/nedb-a-lightweight-javascript-database/)
@@ -35,9 +45,3 @@
 - Moment: [Moment](https://www.npmjs.com/package/moment)
 - Axios: [Axios](https://www.npmjs.com/package/axios)
 - React-Bootstrap-0.31.5: [React-Bootstrap-0.31.5](https://www.npmjs.com/package/react-bootstrap/v/0.31.5)
-
-# Problems that I could not fix or figure out
-
-- When you choosing a item in additem modal for cart you have to chose the second item first, add it, delete it and then you can only add the first item cause if you chose the first item the name won't show when its in cart and transactions
-- Could not figure out how to add the price of item automatically to price input when item is choosen in Name selecter input so you have to type out price instead
-- LiveCart will only show the current transaction being made only after its made
