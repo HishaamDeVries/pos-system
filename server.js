@@ -1,4 +1,4 @@
-let express = require("express"),
+const express = require("express"),
   http = require("http"),
   app = require("express")(),
   server = http.createServer(app),
