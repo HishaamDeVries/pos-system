@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import Header from "./Header";
+import "../../App.css";
+import Header from "../Header";
 import Product from "./Product";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 
 const HOST = "http://localhost:80";
 
-const Inventory = () => {
+const Items = () => {
   const [products, setProducts] = useState([]);
   const [productFormModal, setProductFromModal] = useState(false);
   const [name, setName] = useState("");
@@ -29,6 +29,7 @@ const Inventory = () => {
       name: name,
       quantity: quantity,
       price: price,
+      display: name,
     };
 
     axios
@@ -95,6 +96,9 @@ const Inventory = () => {
       <Header />
 
       <div class="container">
+        <h2 className="text-center" style={{ color: "green" }}>
+          INVENTORY
+        </h2>
         <button
           class="btn btn-success pull-right text-dark"
           onClick={() => setProductFromModal(true)}
@@ -178,4 +182,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default Items;

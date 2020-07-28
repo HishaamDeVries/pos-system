@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "../../App.css";
 import io from "socket.io-client";
-import Header from "./Header";
+import Header from "../Header";
 import axios from "axios";
 import RecentTransactions from "./RecentTransactions";
 import LiveTransactions from "./LiveTransactions";
@@ -64,6 +64,9 @@ const LiveCart = () => {
   return (
     <div>
       <Header />
+      <h2 className="text-center" style={{ color: "green" }}>
+        LIVE CART
+      </h2>
       <div className="livecart">
         <div className="col-md-5 pull-right">
           <div className="panel panel-primary">

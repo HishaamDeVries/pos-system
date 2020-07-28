@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import Header from "./Header";
+import "../../App.css";
+import Header from "../Header";
 import CompleteTransactions from "./CompleteTransactions";
 import axios from "axios";
-import moment from "moment";
 
 const HOST = "http://localhost:80";
 const url = HOST + `/api/all`;
@@ -33,6 +32,10 @@ const Transactions = () => {
   return (
     <div>
       <Header />
+
+      <h2 className="text-center" style={{ color: "green" }}>
+        TRANSACTIONS
+      </h2>
       <br />
       <br />
 

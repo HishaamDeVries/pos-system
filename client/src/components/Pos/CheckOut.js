@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
-import Header from "./Header";
+import "../../App.css";
+import Header from "../Header";
 import io from "socket.io-client";
 import axios from "axios";
 import moment from "moment";
@@ -10,7 +10,7 @@ import LivePos from "./LivePos";
 const HOST = "http://localhost:80";
 let socket = io.connect(HOST);
 
-class Pos extends Component {
+class CheckOut extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +25,7 @@ class Pos extends Component {
       changeDue: 0,
       name: "",
       price: 0,
+      products: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleName = this.handleName.bind(this);
@@ -38,6 +39,12 @@ class Pos extends Component {
       socket.emit("update-live-cart", this.state.items);
     }
   }
+  componentDidMount() {
+    let url = HOST + `/api/inventory/products`;
+    axios.get(url).then((response) => {
+      this.setState({ products: response.data });
+    });
+  }
 
   handleSubmit = (e) => {
     this.setState({ addItemModal: false });
@@ -48,7 +55,7 @@ class Pos extends Component {
       price: this.state.price,
       quantity: this.state.quantity,
     };
-    var items = this.state.items;
+    let items = this.state.items;
     items.push(currentItem);
     this.setState({ items: items });
   };
@@ -60,7 +67,7 @@ class Pos extends Component {
   };
   handlePayment = () => {
     this.setState({ checkOutModal: false });
-    var amountDiff =
+    let amountDiff =
       parseInt(this.state.total, 10) - parseInt(this.state.totalPayment, 10);
     if (this.state.total <= this.state.totalPayment) {
       this.setState({ changeDue: amountDiff });
@@ -74,14 +81,14 @@ class Pos extends Component {
     }
   };
   handleChange = (id, value) => {
-    var items = this.state.items;
+    let items = this.state.items;
     if (value === "delete") {
-      var newitems = items.filter(function (item) {
+      let newitems = items.filter(function (item) {
         return item.id !== id;
       });
       this.setState({ items: newitems });
     } else {
-      for (var i = 0; i < items.length; i++) {
+      for (let i = 0; i < items.length; i++) {
         if (items[i].id === id) {
           items[i].quantity = value;
           this.setState({ items: items });
@@ -91,10 +98,10 @@ class Pos extends Component {
   };
   handleCheckOut = () => {
     this.setState({ checkOutModal: true });
-    var items = this.state.items;
-    var totalCost = 0;
-    for (var i = 0; i < items.length; i++) {
-      var price = items[i].price * items[i].quantity;
+    let items = this.state.items;
+    let totalCost = 0;
+    for (let i = 0; i < items.length; i++) {
+      let price = items[i].price * items[i].quantity;
       totalCost = parseInt(totalCost, 10) + parseInt(price, 10);
     }
     this.setState({ total: totalCost });
@@ -111,9 +118,9 @@ class Pos extends Component {
     });
   };
   render() {
-    var { quantity, modal, items } = this.state;
+    const { items, products } = this.state;
 
-    var renderAmountDue = () => {
+    let renderAmountDue = () => {
       return (
         <Modal show={this.state.amountDueModal}>
           <Modal.Header closeButton>
@@ -134,7 +141,7 @@ class Pos extends Component {
         </Modal>
       );
     };
-    var renderReceipt = () => {
+    let renderReceipt = () => {
       return (
         <Modal show={this.state.receiptModal}>
           <Modal.Header closeButton>
@@ -159,7 +166,7 @@ class Pos extends Component {
       );
     };
 
-    var renderLivePos = () => {
+    let renderLivePos = () => {
       if (items.length === 0) {
         return <p> No products added</p>;
       } else {
@@ -173,6 +180,9 @@ class Pos extends Component {
     return (
       <div>
         <Header />
+        <h2 className="text-center" style={{ color: "green" }}>
+          CHECKOUT
+        </h2>
         <div className="container">
           <div className="text-center">
             <span className="lead">Total</span>
@@ -272,7 +282,7 @@ class Pos extends Component {
                       <i className="glyphicon glyphicon-plus" /> Add Item
                     </button>
                   </span>
-                  <Modal show={this.state.addItemModal} onHide={this.close}>
+                  <Modal show={this.state.addItemModal}>
                     <Modal.Header closeButton>
                       <Modal.Title>Add item(Product)</Modal.Title>
                     </Modal.Header>
@@ -287,12 +297,20 @@ class Pos extends Component {
                             Name
                           </label>
                           <div className="col-md-8 input-group">
-                            <input
+                            <select
+                              title
+                              value={this.state.name}
                               className="form-control"
                               name="name"
                               required
                               onChange={this.handleName}
-                            />
+                            >
+                              {products.map((product) => (
+                                <option key={product._id} value={product.name}>
+                                  {product.display}
+                                </option>
+                              ))}
+                            </select>
                           </div>
                         </div>
                         <div className="form-group">
@@ -313,8 +331,6 @@ class Pos extends Component {
                             />
                           </div>
                         </div>
-
-                        <p className="text-danger">Enter price for item.</p>
                       </form>
                     </Modal.Body>
                     <Modal.Footer>
@@ -345,4 +361,4 @@ class Pos extends Component {
   }
 }
 
-export default Pos;
+export default CheckOut;

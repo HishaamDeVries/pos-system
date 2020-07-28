@@ -1,15 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Inventory from "./Inventory";
-import Pos from "./Pos";
-import Transactions from "./Transactions";
-import LiveCart from "./LiveCart";
+import Items from "./Inventory/Items";
+import CheckOut from "./Pos/CheckOut";
+import Transactions from "./Transactions/Transactions";
+import LiveCart from "./LiveCart/LiveCart";
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Pos} />
-      <Route path="/inventory" component={Inventory} />
+      <Route exact path="/" component={CheckOut} />
+      <Route path="/inventory" component={Items} />
       <Route path="/transactions" component={Transactions} />
       <Route path="/livecart" component={LiveCart} />
     </Switch>

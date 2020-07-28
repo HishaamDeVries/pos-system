@@ -2,7 +2,7 @@
   margin: 7px 3px;
 }
 .not-home {
-  background-color: #ffffff;
+  background-color: #cccccc;
 }
 
 .home-page .large-text {
@@ -137,10 +137,9 @@ ul.nav-menu li a h3 {
 #checkoutButton {
   padding: 0 30px 0 30px;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10%;
+  right: 0;
+  top: 0;
+  height: 100%;
   border-radius: 0;
   font-size: 25px;
 }
