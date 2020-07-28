@@ -1,4 +1,4 @@
-# Point of sale Application Using React, JavaScript and CSS
+# Point of Sale Application Using React, JavaScript and CSS
 
 # All dependencies for front-end
 
@@ -36,7 +36,7 @@
 - Axios: [Axios](https://www.npmjs.com/package/axios)
 - React-Bootstrap-0.31.5: [React-Bootstrap-0.31.5](https://www.npmjs.com/package/react-bootstrap/v/0.31.5)
 
-# Problems that i Could not fix or figure out
+# Problems that I could not fix or figure out
 
 - When you choosing a item in additem modal for cart you have to chose the second item first, add it, delete it and then you can only add the first item cause if you chose the first item the name won't show when its in cart and transactions
 - Could not figure out how to add the price of item automatically to price input when item is choosen in Name selecter input so you have to type out price instead
