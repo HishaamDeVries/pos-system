@@ -1,4 +1,4 @@
-var express = require("express"),
+let express = require("express"),
   http = require("http"),
   app = require("express")(),
   server = http.createServer(app),
@@ -6,7 +6,7 @@ var express = require("express"),
   io = require("socket.io")(server),
   liveCart = [];
 
-const PORT = process.env.PORT || 80;
+const path = require("path");
 
 console.log("Real time POS running");
 console.log("Server started");
@@ -32,6 +32,16 @@ app.all("/*", function (req, res, next) {
 app.use("/api/inventory", require("./api/inventory"));
 app.use("/api/", require("./api/transactions"));
 
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  //Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
+
 // Websocket logic for Live Cart
 io.on("connection", function (socket) {
   socket.on("cart-transaction-complete", function () {
@@ -55,5 +65,7 @@ io.on("connection", function (socket) {
     socket.broadcast.emit("update-live-cart-display", liveCart);
   });
 });
+
+const PORT = process.env.PORT || 80;
 
 server.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
