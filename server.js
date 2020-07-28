@@ -29,12 +29,8 @@ app.all("/*", function (req, res, next) {
   }
 });
 
-app.get("/", function (req, res) {
-  res.send(" Real time POS web app running.");
-});
-
 app.use("/api/inventory", require("./api/inventory"));
-app.use("/api", require("./api/transactions"));
+app.use("/api/", require("./api/transactions"));
 
 // Websocket logic for Live Cart
 io.on("connection", function (socket) {
