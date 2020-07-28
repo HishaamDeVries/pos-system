@@ -32,16 +32,6 @@ app.all("/*", function (req, res, next) {
 app.use("/api/inventory", require("./api/inventory"));
 app.use("/api/", require("./api/transactions"));
 
-// Serve static assets in production
-if (process.env.NODE_ENV === "production") {
-  //Set static folder
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  );
-}
-
 // Websocket logic for Live Cart
 io.on("connection", function (socket) {
   socket.on("cart-transaction-complete", function () {
@@ -65,6 +55,16 @@ io.on("connection", function (socket) {
     socket.broadcast.emit("update-live-cart-display", liveCart);
   });
 });
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  //Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
 
 const PORT = process.env.PORT || 80;
 
