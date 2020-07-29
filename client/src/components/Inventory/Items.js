@@ -5,7 +5,7 @@ import Product from "./Product";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 
-const HOST = "http://localhost:80";
+const HOST = `http://${window.location.hostname}:80`;
 
 const Items = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const Items = () => {
   const [price, setPrice] = useState("");
 
   useEffect(() => {
-    let url = HOST + `/api/inventory/products`;
+    let url = `${HOST}/api/inventory/products`;
     axios.get(url).then((response) => {
       setProducts(response.data);
     });
@@ -33,7 +33,7 @@ const Items = () => {
     };
 
     axios
-      .post(HOST + `/api/inventory/product`, newProduct)
+      .post(`/api/inventory/product`, newProduct)
       .then(
         (response) => setSnackMessage("Product Added Successfully!"),
         handleSnackbar()
@@ -47,7 +47,7 @@ const Items = () => {
 
   const handleEditProduct = (editProduct) => {
     axios
-      .put(HOST + `/api/inventory/product`, editProduct)
+      .put(`/api/inventory/product`, editProduct)
       .then((response) => {
         setSnackMessage("Product Updated Successfully!");
         handleSnackbar();

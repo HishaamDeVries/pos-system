@@ -7,8 +7,8 @@ import RecentTransactions from "./RecentTransactions";
 import LiveTransactions from "./LiveTransactions";
 import moment from "moment";
 
-const HOST = "http://localhost:80";
-const url = HOST + `/api/limit`;
+const HOST = `http://${window.location.hostname}:80`;
+const url = `${HOST}/api/limit`;
 const socket = io.connect(HOST);
 
 const LiveCart = () => {

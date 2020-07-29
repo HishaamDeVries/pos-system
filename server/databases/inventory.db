@@ -1,12 +1,12 @@
-{"name":"Xiaomi Redmi Note 5a Prime","quantity":"8","price":"130","display":"Xiaomi Redmi Note 5a Prime","_id":"aLgBz07oJhhKgL3x"}
-{"name":"Samsung Galaxy S7","quantity":"15","price":"450","display":"Samsung Galaxy S7","_id":"d25zQ5BKM4jijzVk"}
-{"name":"8000MAH Power Bank","quantity":"80","price":"10","display":"8000MAH Power Bank","_id":"dLgBz07oJhhKgL3x"}
-{"name":"Beats Solo 3 HeadPhone","quantity":"14","price":"270","display":"Beats Solo 3 HeadPhone","_id":"eLgBz07iJhhKgL3x"}
-{"name":"Microsoft-Surface-Pro-2017 Tablet","quantity":"1","price":"950","display":"Microsoft-Surface-Pro-2017 Tablet","_id":"hLgBz07oJheKgL3x"}
-{"name":"Dell Latitude 7480 14-Inch Laptop","quantity":"5","price":"1200","display":"Dell Latitude 7480 14-Inch Laptop","_id":"iLgpz07oJhhvgL3x"}
-{"name":"Wireless Keyboard","quantity":"10","price":"25","display":"Wireless Keyboard","_id":"itFSxzmdgU6vJCZP"}
-{"name":"Flash Drive","quantity":"20","price":"10","display":"Flash Drive","_id":"l9virZaobkt1eLiC"}
-{"name":"One Plus 5T","quantity":"3","price":"500","display":"One Plus 5T","_id":"nLgBz07oJhhKgL3x"}
-{"name":"Zealot B19 Bluetooth Headphone","quantity":"20","price":"15","display":"Zealot B19 Bluetooth Headphone","_id":"uLgBz07oJfhKgL3x"}
-{"name":"wwee","quantity":"25","price":"23","display":"wwee","_id":"zFMBE35HnfE8oELJ"}
-{"name":"Universal 3.5mm M/M Audio AUX Cable","quantity":"30","price":"5","display":"Universal 3.5mm M/M Audio AUX Cable","_id":"zLgBz07oJhhKgL2x"}
+{"name":"Xiaomi Redmi Note 5a Prime","quantity":"4","price":"130","_id":"aLgBz07oJhhKgL3x"}
+{"name":"Samsung Galaxy S7","price":"450","quantity":"13","_id":"d25zQ5BKM4jijzVk"}
+{"name":"8000MAH Power Bank","quantity":"81","price":"10","_id":"dLgBz07oJhhKgL3x"}
+{"name":"Beats Solo 3 HeadPhone","price":"270","quantity":"12","_id":"eLgBz07iJhhKgL3x"}
+{"name":"Microsoft-Surface-Pro-2017 Tablet","price":"950","quantity":"2","_id":"hLgBz07oJheKgL3x"}
+{"name":"Dell Latitude 7480 14-Inch Laptop","price":"1200","quantity":"6","_id":"iLgpz07oJhhvgL3x"}
+{"name":"Wireless Keyboard","quantity":"5","price":"","_id":"itFSxzmdgU6vJCZP"}
+{"name":"Flash Drive","quantity":"23","price":"10","_id":"l9virZaobkt1eLiC"}
+{"name":"One Plus 5T","price":"500","quantity":"4","_id":"nLgBz07oJhhKgL3x"}
+{"name":"Zealot B19 Bluetooth Headphone","price":"15","quantity":"16","_id":"uLgBz07oJfhKgL3x"}
+{"name":"wwee","quantity":"23","price":"23","_id":"zFMBE35HnfE8oELJ"}
+{"name":"Universal 3.5mm M/M Audio AUX Cable","price":"5","quantity":"34","_id":"zLgBz07oJhhKgL2x"}

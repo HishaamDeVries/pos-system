@@ -7,7 +7,7 @@ import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
 import LivePos from "./LivePos";
 
-const HOST = "http://localhost:80";
+const HOST = `http://${window.location.hostname}:80`;
 let socket = io.connect(HOST);
 
 class CheckOut extends Component {
@@ -40,7 +40,7 @@ class CheckOut extends Component {
     }
   }
   componentDidMount() {
-    let url = HOST + `/api/inventory/products`;
+    let url = `${HOST}/api/inventory/products`;
     axios.get(url).then((response) => {
       this.setState({ products: response.data });
     });
@@ -307,7 +307,7 @@ class CheckOut extends Component {
                               <option>Select a Item</option>
                               {products.map((product) => (
                                 <option key={product._id} value={product.name}>
-                                  {product.display}
+                                  {product.name}
                                 </option>
                               ))}
                             </select>
