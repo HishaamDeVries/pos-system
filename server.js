@@ -6,7 +6,7 @@ let express = require("express"),
   io = require("socket.io")(server),
   liveCart = [];
 
-const PORT = process.env.PORT || 80;
+const PORT = 80;
 
 console.log("Real time POS running");
 console.log("Server started");
