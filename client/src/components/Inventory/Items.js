@@ -5,7 +5,7 @@ import Product from "./Product";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 
-const HOST = `http://${window.location.hostname}:80`;
+const HOST = `http://${window.location.hostname}:${process.env.PORT || 80}`;
 
 const Items = () => {
   const [products, setProducts] = useState([]);
