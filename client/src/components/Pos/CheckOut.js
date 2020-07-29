@@ -304,6 +304,7 @@ class CheckOut extends Component {
                               required
                               onChange={this.handleName}
                             >
+                              <option>Select a Item</option>
                               {products.map((product) => (
                                 <option key={product._id} value={product.name}>
                                   {product.display}
