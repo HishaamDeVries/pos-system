@@ -13,10 +13,6 @@ const Transactions = new Database({
   autoload: true,
 });
 
-app.get("/", function (req, res) {
-  res.send("Transactions API");
-});
-
 // GET all transactions
 app.get("/all", function (req, res) {
   Transactions.find({})

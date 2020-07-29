@@ -6,6 +6,8 @@ let express = require("express"),
   io = require("socket.io")(server),
   liveCart = [];
 
+const PORT = process.env.PORT || 80;
+
 console.log("Real time POS running");
 console.log("Server started");
 app.use(bodyParser.json());
@@ -63,7 +65,5 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
-
-const PORT = process.env.PORT || 80;
 
 server.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
