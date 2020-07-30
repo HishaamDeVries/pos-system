@@ -7,7 +7,7 @@ import RecentTransactions from "./RecentTransactions";
 import LiveTransactions from "./LiveTransactions";
 import moment from "moment";
 
-const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
+const HOST = `https://hishaams-point-of-sale-system.herokuapp.com:80`;
 console.log("This is to show I was deployed");
 
 const url = `${HOST}/api/limit`;

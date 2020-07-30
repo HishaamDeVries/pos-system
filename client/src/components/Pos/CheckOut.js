@@ -7,7 +7,7 @@ import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
 import LivePos from "./LivePos";
 
-const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
+const HOST = `https://hishaams-point-of-sale-system.herokuapp.com:80`;
 console.log("This is to show I was deployed");
 let socket = io.connect(HOST);
 
