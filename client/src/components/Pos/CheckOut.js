@@ -74,7 +74,7 @@ class CheckOut extends Component {
       this.setState({ receiptModal: true });
       this.handleSaveToDB();
       this.setState({ items: [] });
-      socket.emit("update-live-cart", []);
+      //socket.emit("update-live-cart", []);
     } else {
       this.setState({ changeDue: amountDiff });
       this.setState({ amountDueModal: true });
@@ -348,7 +348,6 @@ class CheckOut extends Component {
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Tax</th>
                 <th>Total</th>
                 <th />
               </tr>
