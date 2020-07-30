@@ -1,4 +1,4 @@
-let express = require("express"),
+const express = require("express"),
   http = require("http"),
   app = require("express")(),
   server = http.createServer(app),
@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 80;
 
 console.log("Real time POS running");
 console.log("Server started");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.all("/*", function (req, res, next) {
   // CORS headers
