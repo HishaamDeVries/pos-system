@@ -4,7 +4,9 @@ import Header from "../Header";
 import CompleteTransactions from "./CompleteTransactions";
 import axios from "axios";
 
-const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
+const HOST = `https://${
+  "hishaams-point-of-sale-system.herokuapp.com" || "localhost:80"
+}`;
 console.log("This is to show I was deployed");
 const url = `${HOST}/api/all`;
 
