@@ -32,7 +32,6 @@
 
 # Problems that I could not fix or figure out
 
-- When you choosing a item in additem modal for cart you have to chose the second item first, add it, delete it and then you can only add the first item cause if you chose the first item the name won't show when its in cart and transactions
 - Could not figure out how to add the price of item automatically to price input when item is choosen in Name selecter input so you have to type out price instead
 - LiveCart will only show the current transaction being made only after its made
 

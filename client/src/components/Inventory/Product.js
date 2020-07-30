@@ -42,7 +42,6 @@ const Product = (props) => {
       name: newName,
       quantity: newQuantity,
       price: newPrice,
-      display: newName,
       _id: props._id,
     };
 

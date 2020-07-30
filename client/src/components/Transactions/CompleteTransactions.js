@@ -23,7 +23,7 @@ const CompleteTransactions = (props) => {
 
   return (
     <tr>
-      <td> {date}</td>
+      <td className="text-primary"> {date}</td>
       <td> {total} </td>
       <td> {renderQuantity(items)} </td>
       <td>

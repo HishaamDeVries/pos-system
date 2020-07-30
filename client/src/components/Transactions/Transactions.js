@@ -4,7 +4,7 @@ import Header from "../Header";
 import CompleteTransactions from "./CompleteTransactions";
 import axios from "axios";
 
-const HOST = `http://${window.location.hostname}:80`;
+const HOST = `http://localhost:80`;
 const url = `${HOST}/api/all`;
 
 const Transactions = () => {

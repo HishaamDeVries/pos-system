@@ -6,7 +6,7 @@ const RecentTransactions = (props) => {
   return (
     <tr>
       <td className="col-md-2">
-        <font style={{ color: "blue" }}>{date}</font>
+        <font className="text-primary">{date}</font>
       </td>
       <td className="col-md-2"> {total} </td>
     </tr>

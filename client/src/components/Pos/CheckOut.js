@@ -7,7 +7,7 @@ import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
 import LivePos from "./LivePos";
 
-const HOST = `http://${window.location.hostname}:80`;
+const HOST = `http://localhost:80`;
 let socket = io.connect(HOST);
 
 class CheckOut extends Component {
