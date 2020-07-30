@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../../App.css";
 import Header from "../Header";
-import io from "socket.io-client";
 import axios from "axios";
 import moment from "moment";
 import { Modal, Button } from "react-bootstrap";

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import io from "socket.io-client";
 import Header from "../Header";
 import axios from "axios";
 import RecentTransactions from "./RecentTransactions";
