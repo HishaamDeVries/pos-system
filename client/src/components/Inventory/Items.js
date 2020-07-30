@@ -5,7 +5,8 @@ import Product from "./Product";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 
-const HOST = `http://localhost:80`;
+const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
+console.log("This is to show I was deployed");
 
 const Items = () => {
   const [products, setProducts] = useState([]);
