@@ -47,10 +47,10 @@ class CheckOut extends Component {
     });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = () => {
     this.setState({ addItemModal: false });
 
-    const currentItem = {
+    let currentItem = {
       id: this.state.id++,
       name: this.state.name,
       price: this.state.price,
