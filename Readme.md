@@ -32,6 +32,7 @@
 
 # Problems that I could not fix or figure out
 
+- Socket.io causes the app to fail in Deployed Heroku version so commited it out
 - Could not figure out how to add the price of item automatically to price input when item is choosen in Name selecter input so you have to type out price instead
 - LiveCart will only show the current transaction being made only after its made
 
