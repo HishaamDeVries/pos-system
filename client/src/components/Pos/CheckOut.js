@@ -7,9 +7,9 @@ import moment from "moment";
 import { Modal, Button } from "react-bootstrap";
 import LivePos from "./LivePos";
 
-const HOST = `https://hishaams-point-of-sale-system.herokuapp.com:80`;
+const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
 console.log("This is to show I was deployed");
-let socket = io.connect(HOST);
+//let socket = io.connect(HOST);
 
 class CheckOut extends Component {
   constructor(props) {
@@ -35,11 +35,11 @@ class CheckOut extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleCheckOut = this.handleCheckOut.bind(this);
   }
-  componentDidUpdate() {
-    if (this.state.items.length !== 0) {
-      socket.emit("update-live-cart", this.state.items);
-    }
-  }
+  // componentDidUpdate() {
+  // if (this.state.items.length !== 0) {
+  // socket.emit("update-live-cart", this.state.items);
+  // }
+  //}
   componentDidMount() {
     let url = `${HOST}/api/inventory/products`;
     axios.get(url).then((response) => {

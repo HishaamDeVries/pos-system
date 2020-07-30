@@ -7,11 +7,11 @@ import RecentTransactions from "./RecentTransactions";
 import LiveTransactions from "./LiveTransactions";
 import moment from "moment";
 
-const HOST = `https://hishaams-point-of-sale-system.herokuapp.com:80`;
+const HOST = `https://hishaams-point-of-sale-system.herokuapp.com`;
 console.log("This is to show I was deployed");
 
 const url = `${HOST}/api/limit`;
-const socket = io.connect(HOST);
+//const socket = io.connect(HOST);
 
 const LiveCart = () => {
   const [transactions, setTransactions] = useState([]);
@@ -25,10 +25,10 @@ const LiveCart = () => {
         console.log(err);
       });
 
-    socket.on("update-live-cart-display", (liveCart) => {
-      setLiveTransactions(liveCart);
-    });
-  });
+   // socket.on("update-live-cart-display", (liveCart) => {
+     // setLiveTransactions(liveCart);
+    //});
+  //});
 
   const renderRecentTransactions = () => {
     if (transactions.length === 0) {
