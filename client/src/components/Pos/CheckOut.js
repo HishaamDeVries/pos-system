@@ -50,7 +50,7 @@ class CheckOut extends Component {
   handleSubmit = () => {
     this.setState({ addItemModal: false });
 
-    let currentItem = {
+    const currentItem = {
       id: this.state.id++,
       name: this.state.name,
       price: this.state.price,
