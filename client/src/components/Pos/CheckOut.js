@@ -323,15 +323,24 @@ class CheckOut extends Component {
                           <div className="col-md-8 input-group">
                             <div className="input-group-addon">R</div>
 
-                            <input
-                              type="number"
-                              step="any"
-                              min="0"
-                              onChange={this.handlePrice}
+                            <select
+                              value={this.state.price}
                               className="form-control"
                               name="price"
                               required
-                            />
+                              onChange={this.handlePrice}
+                            >
+                              <option>
+                                Price Can Be Selected When Item Is Chosen
+                              </option>
+                              {products
+                                .filter(
+                                  (product) => this.state.name === product.name
+                                )
+                                .map((product) => {
+                                  return <option>{product.price}</option>;
+                                })}
+                            </select>
                           </div>
                         </div>
                       </form>
