@@ -20,6 +20,12 @@ const Header = () => (
       <li className="lead">
         <Link to="/livecart">LiveCart</Link>
       </li>
+      <li className="lead">
+        <Link to="/about">About</Link>
+      </li>
+      <li className="lead">
+        <Link to="/contact">Contact</Link>
+      </li>
     </ul>
   </div>
 );
