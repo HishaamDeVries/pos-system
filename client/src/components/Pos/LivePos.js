@@ -33,7 +33,7 @@ const LivePos = (props) => {
           <i className="glyphicon glyphicon-plus" />
         </button>
       </td>
-      <td className="col-md-2">{price}</td>
+      <td className="col-md-2">{price * itemNumber}</td>
       <td className="col-md-2">
         <button
           className="btn btn-danger"
