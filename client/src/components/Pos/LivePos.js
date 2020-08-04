@@ -13,7 +13,7 @@ const LivePos = (props) => {
   return (
     <tr>
       <td className="col-md-2"> {name}</td>
-      <td className="col-md-1"> ${price}</td>
+      <td className="col-md-1"> R{price}</td>
       <td className="col-md-2">
         <button
           className="btn btn-sm pull-left"
