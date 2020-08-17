@@ -6,7 +6,8 @@ const express = require("express"),
   io = require("socket.io")(server),
   liveCart = [];
 
-const PORT = process.env.PORT || 80;
+const PORT =
+  process.env.PORT || 80 || "hishaams-point-of-sale-system.herokuapp.com";
 
 console.log("Real time POS running");
 console.log("Server started");
