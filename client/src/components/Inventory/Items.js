@@ -94,7 +94,7 @@ const Items = () => {
   };
 
   return (
-    <div>
+    <div style={{ background: "#D8BFD8", height: "100%vh" }}>
       <Header />
       <div class="container">
         <h2 className="text-center" style={{ color: "green" }}>

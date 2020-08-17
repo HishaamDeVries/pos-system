@@ -3,14 +3,16 @@ import Header from "../Header";
 
 export const About = () => {
   return (
-    <Fragment style={{ background: "#D8BFD8" }}>
+    <Fragment
+      style={{ background: "#D8BFD8", overflow: "visible", height: "100vh" }}
+    >
       <Header />
       <h2 className="text-center" style={{ color: "green" }}>
         About this App
       </h2>
       <h3 className="text-center">
-        This App is Point of Sale System built for self-own to small Business
-        Use
+        This App is a Point of Sale System built for small self-own to normal
+        small businesses Use
       </h3>
       <h3 className="text-center">Version: 1.0.0</h3>
       <h3 className="text-center">Database Used: NeDB</h3>

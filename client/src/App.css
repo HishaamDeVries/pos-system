@@ -40,6 +40,10 @@ legend {
   overflow: scroll;
 }
 
+.border {
+  border-color: gray;
+}
+
 .livecart {
   margin: 0 auto;
   float: none;

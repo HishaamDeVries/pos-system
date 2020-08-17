@@ -9,7 +9,7 @@ const About = () => {
       <h1 className="mb-3 text-center" style={{ color: "green" }}>
         Contact
       </h1>
-      <div className="row" style={{ marginTop: 7 + "rem" }}>
+      <div className="row">
         <div className="col-12 col-lg-6 text-center">
           <h3>Phone: 081 595 7849</h3>
           <h3>Whatsapp: 075 959 7802</h3>
@@ -45,7 +45,7 @@ const About = () => {
             <input
               type="text"
               name="name"
-              className="form-control form-control-lg"
+              className="form-control form-control-lg border"
               id="name"
               placeholder="Name"
               required
@@ -57,7 +57,7 @@ const About = () => {
             <input
               type="email"
               name="_replyto"
-              className="form-control form-control-lg"
+              className="form-control form-control-lg border"
               id="exampleFormControlInput1"
               placeholder="Your email"
               required
@@ -68,7 +68,7 @@ const About = () => {
           <div className="row-md-6  mx-auto">
             <textarea
               name="message"
-              className="form-control form-control-lg"
+              className="form-control form-control-lg border"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder="Write your message..."
