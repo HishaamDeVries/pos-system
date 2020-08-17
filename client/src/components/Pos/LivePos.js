@@ -16,7 +16,7 @@ const LivePos = (props) => {
       <td className="col-md-1"> R{price}</td>
       <td className="col-md-2">
         <button
-          className="btn btn-sm pull-left"
+          className="btn btn-sm pull-left btn-danger"
           onClick={() => handleChange(id, --itemNumber)}
         >
           <i className="glyphicon glyphicon-minus" />
@@ -27,7 +27,7 @@ const LivePos = (props) => {
         </div>
 
         <button
-          className="btn btn-sm pull-right"
+          className="btn btn-sm pull-right btn-success"
           onClick={() => handleChange(id, ++itemNumber)}
         >
           <i className="glyphicon glyphicon-plus" />

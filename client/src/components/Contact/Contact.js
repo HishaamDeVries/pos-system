@@ -39,11 +39,7 @@ const About = () => {
       </div>
 
       <h3 className="mb-3 text-center">OR MESSAGE ME</h3>
-      <form
-        action="https://formspree.io/xpzyjbno"
-        method="POST"
-        style={{ marginTop: 7 + "rem" }}
-      >
+      <form action="https://formspree.io/xpzyjbno" method="POST">
         <div className="form-group">
           <div className="row-md-6">
             <input
@@ -80,8 +76,8 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="row text-md-right text-sm-center">
-          <button type="submit" className="btn btn-primary mb-2">
+        <div className="row row-md-6 mx-auto">
+          <button type="submit" className="btn btn-primary pull-right mb-2">
             Submit
           </button>
         </div>

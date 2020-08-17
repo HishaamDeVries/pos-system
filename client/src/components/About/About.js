@@ -3,7 +3,7 @@ import Header from "../Header";
 
 export const About = () => {
   return (
-    <Fragment>
+    <Fragment style={{ background: "#D8BFD8" }}>
       <Header />
       <h2 className="text-center" style={{ color: "green" }}>
         About this App

@@ -96,7 +96,6 @@ const Items = () => {
   return (
     <div>
       <Header />
-
       <div class="container">
         <h2 className="text-center" style={{ color: "green" }}>
           INVENTORY

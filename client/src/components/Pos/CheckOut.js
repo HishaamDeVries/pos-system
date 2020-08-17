@@ -273,14 +273,14 @@ class CheckOut extends Component {
           </div>
           {renderAmountDue()}
           {renderReceipt()}
-          <table className="pos table table-responsive table-striped table-hover">
+          <table className="pos table table-responsive table-hover">
             <thead>
               <tr>
                 <td colspan="6" className="text-center">
                   <span className="pull-left">
                     <button
                       onClick={() => this.setState({ addItemModal: true })}
-                      className="btn btn-default btn-sm"
+                      className="btn btn-sm btn-success"
                     >
                       <i className="glyphicon glyphicon-plus" /> Add Item
                     </button>
