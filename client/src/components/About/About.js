@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../Header";
 
 export const About = () => {
   return (
-    <Fragment
+    <div
       style={{ background: "#D8BFD8", overflow: "visible", height: "100vh" }}
     >
       <Header />
@@ -16,7 +16,7 @@ export const About = () => {
       </h3>
       <h3 className="text-center">Version: 1.0.0</h3>
       <h3 className="text-center">Database Used: NeDB</h3>
-    </Fragment>
+    </div>
   );
 };
 

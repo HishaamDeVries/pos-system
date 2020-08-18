@@ -109,6 +109,7 @@ class CheckOut extends Component {
     }
     this.setState({ total: totalCost });
   };
+
   handleSaveToDB = () => {
     const transaction = {
       date: moment().format("DD-MMM-YYYY HH:mm:ss"),
@@ -144,6 +145,7 @@ class CheckOut extends Component {
         </Modal>
       );
     };
+
     let renderReceipt = () => {
       return (
         <Modal show={this.state.receiptModal}>
