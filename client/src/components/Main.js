@@ -8,7 +8,7 @@ import Contact from "./Contact/Contact";
 import About from "./About/About";
 
 const Main = () => (
-  <main>
+  <main style={{ background: "#D8BFD8", overflow: "visible", height: "100vh" }}>
     <Switch>
       <Route exact path="/" component={CheckOut} />
       <Route path="/inventory" component={Items} />
