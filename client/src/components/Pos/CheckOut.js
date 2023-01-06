@@ -109,6 +109,7 @@ class CheckOut extends Component {
     }
     this.setState({ total: totalCost });
   };
+
   handleSaveToDB = () => {
     const transaction = {
       date: moment().format("DD-MMM-YYYY HH:mm:ss"),
@@ -144,6 +145,7 @@ class CheckOut extends Component {
         </Modal>
       );
     };
+
     let renderReceipt = () => {
       return (
         <Modal show={this.state.receiptModal}>
@@ -171,7 +173,7 @@ class CheckOut extends Component {
 
     let renderLivePos = () => {
       if (items.length === 0) {
-        return <p> No products added</p>;
+        return "No products added";
       } else {
         return items.map(
           (item) => <LivePos {...item} onChange={this.handleChange} />,
@@ -211,7 +213,7 @@ class CheckOut extends Component {
                 o<br />
                 u<br />t
               </button>
-              <div classNameName="modal-body">
+              <div className="modal-body">
                 <Modal show={this.state.checkOutModal}>
                   <Modal.Header closeButton>
                     <Modal.Title>Checkout</Modal.Title>
@@ -273,14 +275,14 @@ class CheckOut extends Component {
           </div>
           {renderAmountDue()}
           {renderReceipt()}
-          <table className="pos table table-responsive table-striped table-hover">
+          <table className="pos table table-responsive table-hover">
             <thead>
               <tr>
-                <td colspan="6" className="text-center">
+                <td colSpan="6" className="text-center">
                   <span className="pull-left">
                     <button
                       onClick={() => this.setState({ addItemModal: true })}
-                      className="btn btn-default btn-sm"
+                      className="btn btn-sm btn-success"
                     >
                       <i className="glyphicon glyphicon-plus" /> Add Item
                     </button>
@@ -323,24 +325,21 @@ class CheckOut extends Component {
                           <div className="col-md-8 input-group">
                             <div className="input-group-addon">R</div>
 
-                            <select
-                              value={this.state.price}
-                              className="form-control"
-                              name="price"
-                              required
-                              onChange={this.handlePrice}
-                            >
-                              <option>
-                                Price Can Be Selected When Item Is Chosen
-                              </option>
-                              {products
+                            <input
+                              value={products
                                 .filter(
                                   (product) => this.state.name === product.name
                                 )
                                 .map((product) => {
-                                  return <option>{product.price}</option>;
+                                  return (this.state.price = product.price);
                                 })}
-                            </select>
+                              className="form-control"
+                              name="price"
+                              type="number"
+                              disabled
+                              required
+                              onChange={this.handlePrice}
+                            />
                           </div>
                         </div>
                       </form>

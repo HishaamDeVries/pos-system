@@ -2,7 +2,11 @@
 
 # What is the purpose of this app
 
-- This web app is a point of sale system ment for self-own or small businesses which helps keep track of transactions made, inventory and sales made
+- This web app is a point of sale system meant for self-own or small businesses which helps keep track of transactions made, inventory and sales made
+
+# Motivation for creating this app
+
+- I wanted to make this type of app because my sister was running her own small business and had no way to track sales or check inventory so I created this app to meet this need.
 
 # To start both front and back-end at the same time.
 

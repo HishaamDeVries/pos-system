@@ -40,6 +40,10 @@ legend {
   overflow: scroll;
 }
 
+.border {
+  border-color: gray;
+}
+
 .livecart {
   margin: 0 auto;
   float: none;
@@ -107,12 +111,10 @@ nav-menu {
 nav-menu h1 {
   font-size: 50px;
 }
-
 ul.nav-menu {
-  margin-top: 25px;
-  margin-bottom: 45px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-
 ul.nav-menu li {
   display: inline;
   margin-left: 25px;

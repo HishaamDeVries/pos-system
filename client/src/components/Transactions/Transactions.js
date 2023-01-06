@@ -35,14 +35,13 @@ const Transactions = () => {
   return (
     <div>
       <Header />
-
       <h2 className="text-center" style={{ color: "green" }}>
         TRANSACTIONS
       </h2>
       <br />
       <br />
 
-      <table className="table table-hover table-striped">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Time</th>

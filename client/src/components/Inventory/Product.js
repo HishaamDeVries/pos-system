@@ -54,7 +54,8 @@ const Product = (props) => {
   return (
     <tr>
       <td className="text-primary">{name}</td>
-      <td>R {price}</td> <td> {quantity} </td>
+      <td>R{price}</td>
+      <td>{quantity}</td>
       <td>
         <button className="btn btn-info" onClick={() => setProductModal(true)}>
           <i className="glyphicon glyphicon-pencil" /> Edit
@@ -111,7 +112,9 @@ const Product = (props) => {
                 />
               </div>
             </div>
-            <br /> <br /> <br />
+            <br />
+            <br />
+            <br />
           </form>
         </Modal.Body>
         <Modal.Footer>
