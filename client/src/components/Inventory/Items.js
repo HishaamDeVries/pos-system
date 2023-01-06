@@ -85,7 +85,7 @@ const Items = () => {
 
   const renderProducts = () => {
     if (products.length === 0) {
-      return <p>{products}</p>;
+      return products;
     } else {
       return products.map((product) => (
         <Product {...product} onEditProduct={handleEditProduct} />
@@ -94,23 +94,22 @@ const Items = () => {
   };
 
   return (
-    <div>
+    <div style={{ background: "#D8BFD8", height: "100%vh" }}>
       <Header />
-
-      <div class="container">
+      <div className="container">
         <h2 className="text-center" style={{ color: "green" }}>
           INVENTORY
         </h2>
         <button
-          class="btn btn-success pull-right text-dark"
+          className="btn btn-success pull-right text-dark"
           onClick={() => setProductFromModal(true)}
         >
-          <i class="glyphicon glyphicon-plus" /> Add New Item
+          <i className="glyphicon glyphicon-plus" /> Add New Item
         </button>
         <br />
         <br />
 
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Name</th>
