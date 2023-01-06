@@ -89,13 +89,13 @@ const LiveCart = () => {
           </div>
         </div>
         <div className="col-md-5 pull-left">
-          <div className="panel panel-default">
+          <div className="panel panel-primary">
             <div className="panel-heading lead text-center">
               Recent Transactions
             </div>
 
             <div className="panel-body">
-              <table className="table table-hover table-striped">
+              <table className="table table-hover">
                 <thead>
                   <tr>
                     <th>Time</th>
